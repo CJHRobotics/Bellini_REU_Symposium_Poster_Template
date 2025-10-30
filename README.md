@@ -160,7 +160,7 @@ This sequence ensures that all citations and references appear correctly.
 
 ## Final Checklist Before Submission
 
-* [ ] Replace all placeholder text marked with `�� STUDENT EDIT HERE`.
+* [ ] Replace all placeholder text marked with `STUDENT EDIT HERE`.
 * [ ] Verify that all figures load correctly and are properly labeled.
 * [ ] Confirm that all references appear at the end of the poster.
 * [ ] Check for spelling, clarity, and alignment consistency.

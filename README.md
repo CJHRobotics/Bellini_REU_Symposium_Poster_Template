@@ -1,26 +1,40 @@
-# USF REU Poster Template (Beamerposter + Gemini Theme)
+# USF REU Poster Template
 
-This Overleaf project provides a **three-column academic poster template** for the University of South Florida’s REU and undergraduate research programs.
-It uses the `beamerposter` class with the Gemini theme, providing a clean, readable layout suitable for academic presentations and symposia.
+This repository provides a **three-column academic poster template** for the **University of South Florida (USF)** REU and undergraduate research programs.
+It uses the `beamerposter` class with the Gemini theme, providing a clean and professional format suitable for symposiums, showcases, and conferences.
 
 ---
 
 ## Getting Started
 
-1. **Open `poster.tex`**
-   This is the main file where all poster content is written and organized.
+1. **Download or Clone the Repository**
 
-2. **Locate the comments marked with `STUDENT EDIT HERE`**
-   These comments identify areas that you should modify:
+   Option A – *Direct download (recommended for most users)*
 
-   * Title, author names, and affiliations
-   * Abstract and project description
-   * Figures, tables, and captions
-   * Discussion, acknowledgments, and references
+   * Click the green **“Code”** button at the top of this GitHub page.
+   * Choose **“Download ZIP”**.
+   * Extract the ZIP file on your computer.
 
-3. **Avoid changing the structure or formatting code**
-   The layout, color scheme, and spacing have already been optimized.
-   Focus on adding and editing text content.
+   Option B – *Using Git (for advanced users)*
+
+   ```bash
+   git clone https://github.com/CJHRobotics/Bellini_REU_Symposium_Poster_Template.git
+   ```
+
+2. **Upload the Template to Overleaf**
+
+   * Go to [https://www.overleaf.com](https://www.overleaf.com).
+   * Click **New Project → Upload Project**.
+   * Drag and drop the extracted ZIP folder or select all the files (`poster.tex`, `poster.bib`, `figures/`, and `logos/`).
+   * Overleaf will import everything and set up the project automatically.
+   * Press **Recompile** to generate your poster PDF.
+
+3. **Edit the Template**
+
+   * Open `poster.tex`.
+   * Look for comments marked **`STUDENT EDIT HERE`** — these indicate where you should make changes.
+   * Replace the sample text, add your own figures, and cite references from `poster.bib`.
+   * Do not modify layout or formatting code.
 
 ---
 
@@ -30,122 +44,79 @@ It uses the `beamerposter` class with the Gemini theme, providing a clean, reada
 project/
 │
 ├── poster.tex              # Main LaTeX source file
-├── poster.bib              # Bibliography file (BibLaTeX format)
-├── figures/                # Folder for all images
+├── poster.bib              # Reference file (BibLaTeX format)
+├── figures/                # Folder for your figures and charts
 │   ├── example.png
 │   └── learning_curve_example.png
-├── logos/                  # Folder for logos or QR codes
+├── logos/                  # Folder for USF logo and QR code (optional)
 │   ├── usflogo.png
 │   └── qr.png
-└── README.md               # Instructional guide
+└── README.md               # Instructions and usage guide
 ```
 
 ---
 
-## Writing the Poster Sections
+## Writing the Poster
+
+Each section of the poster is preformatted and includes instructions as comments in the LaTeX file.
 
 ### Abstract
 
-* Write one paragraph (150–250 words).
-* Describe the **problem**, **method**, **key findings**, and **importance**.
-* Avoid figures, tables, or citations.
-* Keep language accessible for a general STEM audience.
+Write a 150–250 word paragraph summarizing the purpose, methods, key findings, and importance of your work. Avoid figures, equations, or citations.
 
 ### General Project Description and Goals
 
-* Explain **why** the project is important and **what** it aims to achieve.
-* Include 2–4 concise, measurable goals.
-* Use short paragraphs and bullet points for clarity.
+Describe the motivation and background for your research. Include 2–4 clear, measurable goals.
 
-### Experiments
+### Experiments and Results
 
-* Outline what was tested, how data was collected, and which metrics were used.
-* Mention independent and dependent variables clearly.
-* Keep this section factual and structured.
+Summarize the experimental setup and methods. Include tables and figures with captions:
 
-### Results
+```latex
+\caption{Results comparing three experimental conditions.}
+\label{tab:results_demo}
+```
 
-* Present findings in a clear format such as a table or figure.
-* Include labels and captions for every table and figure.
-* Example:
+To reference these in text:
 
-  ```latex
-  \caption{Performance results across multiple test configurations.}
-  \label{tab:results_demo}
-  ```
-* When referring to your table in text, use:
-
-  ```latex
-  See Table~\ref{tab:results_demo}.
-  ```
+```latex
+See Table~\ref{tab:results_demo}.
+```
 
 ### Discussion
 
-* Interpret your results and connect them to the project goals.
-* Do not repeat raw numbers or re-describe figures.
-* Use **bold**, *italics*, and \underline{underlining} sparingly to emphasize ideas.
-* Example reference:
+Interpret your results. Use **bold**, *italics*, and \underline{underlining} sparingly for emphasis.
+Reference tables and figures (e.g., *As shown in Fig.~\ref{fig:summary_plot}...*).
 
-  ```latex
-  As shown in Fig.~\ref{fig:summary_plot}, higher cluster counts produced more stable results.
-  ```
+### Future Work and Acknowledgments
 
-### Future Work
-
-* List 2–4 specific steps for continuing the project.
-* Examples: testing on hardware, expanding datasets, or integrating new algorithms.
-
-### Acknowledgments
-
-* Recognize supporting grants, mentors, or collaborators.
-* Example:
-
-  > This material is based upon work supported by the National Science Foundation under Grant No. XXXXXXX.
+List actionable next steps and credit mentors, collaborators, or funding sources such as NSF grants.
 
 ### References
 
-* All sources should be listed in `poster.bib` using BibTeX format.
-* Example entry:
+Add citations in `poster.bib` using BibLaTeX. Example:
 
-  ```bibtex
-  @article{doe2024,
-    author  = {Doe, Jane and Smith, Alex},
-    title   = {Learning Visual Place Cells in Robots},
-    journal = {Frontiers in Neurorobotics},
-    year    = {2024}
-  }
-  ```
-* Cite references using:
-
-  ```latex
-  \cite{doe2024}
-  ```
-
----
-
-## Adding Figures
-
-1. Place image files in the `/figures` directory.
-2. Include them with:
-
-   ```latex
-   \includegraphics[width=0.7\linewidth]{figures/my_image.png}
-   ```
-3. Adjust the width to control image size (`0.5\linewidth` to `\linewidth`).
-4. Always include a caption and label for each figure.
+```bibtex
+@article{doe2024,
+  author  = {Doe, Jane and Smith, Alex},
+  title   = {Learning Visual Place Cells in Robots},
+  journal = {Frontiers in Neurorobotics},
+  year    = {2024}
+}
+```
 
 ---
 
 ## Compiling the Poster
 
-### In Overleaf
+### On Overleaf
 
-* Press **Recompile** to build the PDF.
-* The default compiler (PDFLaTeX) is sufficient.
+* Press **Recompile** to build the poster.
+* The project uses **PDFLaTeX** with BibLaTeX; no extra configuration is needed.
 
-### On a Local Machine
+### Locally (Optional)
 
-If compiling locally, run the following commands:
+If you want to compile locally using TeXLive:
 
 ```bash
 pdflatex poster.tex
@@ -154,24 +125,23 @@ pdflatex poster.tex
 pdflatex poster.tex
 ```
 
-This sequence ensures that all citations and references appear correctly.
-
 ---
 
 ## Final Checklist Before Submission
 
 * [ ] Replace all placeholder text marked with `STUDENT EDIT HERE`.
-* [ ] Verify that all figures load correctly and are properly labeled.
-* [ ] Confirm that all references appear at the end of the poster.
+* [ ] Ensure all images load correctly from the `figures/` directory.
+* [ ] Verify all references appear at the end.
 * [ ] Check for spelling, clarity, and alignment consistency.
-* [ ] Export the final version as **A2 landscape PDF** for printing.
+* [ ] Export as an **A2 landscape PDF** for printing or submission.
 
 ---
 
-## Additional Advice
+## License
 
-* Keep text concise.
-* Avoid large paragraphs; prefer bullets and short sentences.
-* Use color contrast wisely and ensure figures are legible from a distance.
-* Verify that each figure or table directly supports a key claim in your discussion.
-* Always proofread your final version carefully.
+This template is released under the **MIT License (2025)**
+Copyright © 2025 **Chance J. Hamilton**
+
+Permission is granted to use, copy, modify, and distribute this template for educational and research purposes with attribution.
+
+
